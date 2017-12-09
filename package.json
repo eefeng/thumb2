@@ -10,11 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "koa": "^2.0.0-alpha.8",
     "koa-simple-router": "^0.2.0",
     "koa-static": "^4.0.2",
     "koa-swig": "^2.2.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
