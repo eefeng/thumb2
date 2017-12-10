@@ -13,9 +13,9 @@ export default class IndexModel {
         }
         return new Promise((resolve, reject) => {
             rp(opts).then((res) => {
-                const result = JSON.parse(res);
-                if(result) {
-                    resolve({result})
+                const info = JSON.parse(res);
+                if(info) {
+                    resolve({data: info.res})
                 } else {
                     reject({})
                 }

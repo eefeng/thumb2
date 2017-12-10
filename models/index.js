@@ -34,9 +34,9 @@ var IndexModel = function () {
             };
             return new Promise(function (resolve, reject) {
                 (0, _requestPromise2.default)(opts).then(function (res) {
-                    var result = JSON.parse(res);
-                    if (result) {
-                        resolve({ result: result });
+                    var info = JSON.parse(res);
+                    if (info) {
+                        resolve({ data: info.res });
                     } else {
                         reject({});
                     }

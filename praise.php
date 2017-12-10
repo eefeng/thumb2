@@ -1,4 +1,5 @@
 <?php
+header('content-type: application/json;charset=utf-8');
 class ConMysql {
     public  $serverName;
     public  $username;
@@ -17,7 +18,6 @@ class ConMysql {
         try {
             $dsn = "mysql:host=$this->serverName;dbname=$this->dbName";
             $this->con = new PDO($dsn, $this->username, $this->password);
-            echo "one";
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -29,6 +29,9 @@ class ConMysql {
         }
 
         $res = $this->con->exec($sql);
+
+        $arr = array("res" => $res);
+        echo json_encode($arr);
 
         $this->close();
     }
@@ -50,8 +53,7 @@ class RealConn extends ConMysql {
 }
 
 
-$praiseCon = new RealConn('localhost', 'root', '123456', 'thumb');
+$praiseCon = new RealConn('localhost', 'root', '', 'thumb');
 $praiseCon->updateNum();
 
-echo "Hello";
 ?>
